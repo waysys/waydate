@@ -1,1 +1,1 @@
-The waydate repository stores an implementation of WayDate in GO.
+The waydate repository stores a specification for waydate calculations.
