@@ -5,7 +5,7 @@ import (
 	"slices"
 	"strconv"
 
-	"waydate/pkg/assert"
+	"acorn_go/pkg/assert"
 )
 
 // This file implements functions related to the day of the week.
