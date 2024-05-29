@@ -1,3 +1,14 @@
+// ----------------------------------------------------------------------------
+//
+// Date
+//
+// Author: William Shaffer
+// Version: 27-April-2024
+//
+// Copyright (c) 2024 William Shaffer All Rights Reserved
+//
+// ----------------------------------------------------------------------------
+
 // Package date implements the date algorithms specified by DateBench at
 // https://waysysweb.com/waysys/datebench.html.
 // The Date type is intended to be invariant.  Use the operations in

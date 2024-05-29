@@ -1,3 +1,14 @@
+// ----------------------------------------------------------------------------
+//
+// Date Test
+//
+// Author: William Shaffer
+// Version: 27-April-2024
+//
+// Copyright (c) 2024 William Shaffer All Rights Reserved
+//
+// ----------------------------------------------------------------------------
+
 package date
 
 import (

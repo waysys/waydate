@@ -5,7 +5,7 @@
 // Author: William Shaffer
 // Version: 25-Apr-2024
 //
-// Copyright (c) William Shaffer
+// Copyright (c) 2024 William Shaffer
 //
 // ----------------------------------------------------------------------------
 
