@@ -10,7 +10,8 @@ import (
 	"os"
 	"strconv"
 	"testing"
-	"waydate/pkg/date"
+
+	"github.com/waysys/waydate/pkg/date"
 )
 
 // ----------------------------------------------------------------------------
