@@ -1,4 +1,4 @@
-module waydate
+module github.com/waysys/waydate
 
 go 1.22.1
 
