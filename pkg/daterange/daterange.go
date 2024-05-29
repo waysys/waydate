@@ -8,7 +8,8 @@ package daterange
 
 import (
 	"errors"
-	d "waydate/pkg/date"
+
+	d "github.com/waysys/waydate/pkg/date"
 )
 
 // ----------------------------------------------------------------------------

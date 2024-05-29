@@ -1,3 +1,0 @@
-# github.com/waysys/assert v0.0.0-20240528204126-c36b2622dff7
-## explicit; go 1.22.1
-github.com/waysys/assert/assert
