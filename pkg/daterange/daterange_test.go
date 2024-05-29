@@ -65,7 +65,7 @@ func Test_NewRange(t *testing.T) {
 	}
 
 	// Case 2: invalid date range
-	dateRange, err = New(date2, date1)
+	_, err = New(date2, date1)
 	if err == nil {
 		t.Error("New did not detect invalid date range.")
 	} else {
