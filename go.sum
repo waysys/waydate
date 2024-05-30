@@ -1,2 +1,4 @@
 github.com/waysys/assert v0.0.0-20240529004304-2e5a32d3c3ea h1:9FaTeu4N3dlxyyla/hqnQjBhg9UXLGvE87jFf8stJq4=
 github.com/waysys/assert v0.0.0-20240529004304-2e5a32d3c3ea/go.mod h1:RHJf9yXJQrdpsLtl6q5PNTXBp/RUkvy4yfjM1D8dQSE=
+github.com/waysys/assert v1.0.0 h1:PlMf8ECbJGkrDW982Xtg4qDQN6WehNwkRpM2Rdwu6uQ=
+github.com/waysys/assert v1.0.0/go.mod h1:RHJf9yXJQrdpsLtl6q5PNTXBp/RUkvy4yfjM1D8dQSE=
