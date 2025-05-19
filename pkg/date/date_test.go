@@ -458,3 +458,44 @@ func Test_WeekDay(t *testing.T) {
 		t.Run(d.name, testFunction)
 	}
 }
+
+// ----------------------------------------------------------------------------
+// Test YearMonth
+// ----------------------------------------------------------------------------
+
+// Test_YearMonthString tests the month name capabilities.
+func Test_YearMonthString(t *testing.T) {
+	var yearMonth, _ = NewYearMonth(MinYear, 1)
+	var yms = yearMonth.MonthString()
+	var yearMonth2, _ = NewYearMonth(MinYear, 12)
+	var yms2 = yearMonth2.MonthString()
+
+	var testFunction = func(t *testing.T) {
+		var name = yms.Month
+		if name != "Jan" {
+			t.Fatalf("Wrong name of month: %s", name)
+		}
+		name = yms2.Month
+		if name != "Dec" {
+			t.Fatalf("Wrong name of month: %s", name)
+		}
+
+	}
+	t.Run("Year Month Test", testFunction)
+}
+
+// Test_DateString tests the conversion of a date to a string
+func Test_DateString(t *testing.T) {
+	var dateString = "01/01/2024"
+	var date, _ = NewFromString(dateString)
+
+	var testFunction = func(t *testing.T) {
+		var actualString = date.String()
+		var expectedString = "01-Jan-2024"
+		if actualString != expectedString {
+			t.Fatalf("Wrong date string: %s", actualString)
+		}
+	}
+
+	t.Run("Date String", testFunction)
+}

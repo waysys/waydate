@@ -10,7 +10,7 @@
 // ----------------------------------------------------------------------------
 
 // Package date implements the date algorithms specified by DateBench at
-// https://waysysweb.com/waysys/datebench.html.
+// https://waysysweb.com.
 // The Date type is intended to be invariant.  Use the operations in
 // this package to manipulate the dates, rather than directly changing the fields
 // in the structure.
@@ -84,21 +84,6 @@ var daysInMonth = []int{
 	31, // October
 	30, // November
 	31, // December
-}
-
-var namesMonth = []string{
-	"Jan",
-	"Feb",
-	"Mar",
-	"Apr",
-	"May",
-	"Jun",
-	"Jul",
-	"Aug",
-	"Sep",
-	"Oct",
-	"Nov",
-	"Dec",
 }
 
 var MaxDate, _ = New(12, 31, MaxYear)
@@ -711,8 +696,15 @@ func (date Date) String() string {
 	} else {
 		day = strconv.Itoa(int(date.day))
 	}
-	month = namesMonth[date.month-1]
+	month = MonthName(date.month)
 	year = strconv.Itoa(int(date.year))
 	dateAsString = day + "-" + month + "-" + year
 	return dateAsString
+}
+
+// MonthName returns the name of the month
+func MonthName(month Month) string {
+	var yearMonth, _ = NewYearMonth(MinYear, int(month))
+	var yms = yearMonth.MonthString()
+	return yms.Month
 }

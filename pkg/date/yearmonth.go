@@ -30,14 +30,36 @@ type YearMonth struct {
 	Month int
 }
 
+type YearMonthString struct {
+	Year  int
+	Month string
+}
+
 // ----------------------------------------------------------------------------
 // Constants
 // ----------------------------------------------------------------------------
 
 const (
-	startYear = 2022
-	endYear   = 2024
+	startYear  = 2022
+	startMonth = 9
+	endYear    = 2025
+	endMonth   = 12
 )
+
+var namesMonth = []string{
+	"Jan",
+	"Feb",
+	"Mar",
+	"Apr",
+	"May",
+	"Jun",
+	"Jul",
+	"Aug",
+	"Sep",
+	"Oct",
+	"Nov",
+	"Dec",
+}
 
 // ----------------------------------------------------------------------------
 // Factory Functions
@@ -81,9 +103,9 @@ func Keys() ([]YearMonth, error) {
 	for year := startYear; year <= endYear; year++ {
 		for month := 1; month <= 12; month++ {
 			switch {
-			case year == startYear && month < 9:
+			case year == startYear && month < startMonth:
 				// do nothing
-			case year == endYear && month > 5:
+			case year == endYear && month > endMonth:
 				// do nothing
 			default:
 				yearMonth, err = NewYearMonth(year, month)
@@ -97,12 +119,34 @@ func Keys() ([]YearMonth, error) {
 	return keys, nil
 }
 
+// newYearMonthString creates a new YearMonthString with the month translated
+// from the month number (1..12) to the month abbreviation.
+func newYearMonthString(yearMonth YearMonth) YearMonthString {
+	yms := YearMonthString{
+		Year:  yearMonth.Year,
+		Month: namesMonth[yearMonth.Month-1],
+	}
+	return yms
+}
+
 // ----------------------------------------------------------------------------
-// Methods
+// Functions
+// ----------------------------------------------------------------------------
+
+// MonthAbbr returns the abbreviation of a
+
+// ----------------------------------------------------------------------------
+// Methods - YearMonth
 // ----------------------------------------------------------------------------
 
 // String converts a year month to a string in the format MM/YYYY.
 func (yearMonth YearMonth) String() string {
 	var value = strconv.Itoa(yearMonth.Month) + "/" + strconv.Itoa(yearMonth.Year)
 	return value
+}
+
+// MonthString converts the current year month to a year month string.
+func (yearMonth YearMonth) MonthString() YearMonthString {
+	yms := newYearMonthString(yearMonth)
+	return yms
 }
