@@ -39,13 +39,6 @@ type YearMonthString struct {
 // Constants
 // ----------------------------------------------------------------------------
 
-const (
-	startYear  = 2022
-	startMonth = 9
-	endYear    = 2025
-	endMonth   = 8
-)
-
 var namesMonth = []string{
 	"Jan",
 	"Feb",
@@ -95,10 +88,14 @@ func NewYearMonthFromDate(date Date) (YearMonth, error) {
 }
 
 // Keys returns a slice with the year month structures for 2023 and 2024.
-func Keys() ([]YearMonth, error) {
+func Keys(from YearMonth, thru YearMonth) ([]YearMonth, error) {
 	var keys []YearMonth
 	var err error
 	var yearMonth YearMonth
+	var startYear = from.Year
+	var startMonth = from.Month
+	var endYear = thru.Year
+	var endMonth = thru.Month
 
 	for year := startYear; year <= endYear; year++ {
 		for month := 1; month <= 12; month++ {

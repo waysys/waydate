@@ -499,3 +499,22 @@ func Test_DateString(t *testing.T) {
 
 	t.Run("Date String", testFunction)
 }
+
+// Test_Keys tests the generations of a slice of YearMonth's
+// in a certain range
+func Test_Keys(t *testing.T) {
+	var from, _ = NewYearMonth(2022, 9)
+	var thru, _ = NewYearMonth(2025, 8)
+	var keys, _ = Keys(from, thru)
+
+	var testFunction = func(t *testing.T) {
+		var length = len(keys)
+		if from != keys[0] {
+			t.Fatalf("Wrong initial key: %s", keys[0])
+		}
+		if thru != keys[length-1] {
+			t.Fatalf("Wrong final key: %s", keys[length-1])
+		}
+	}
+	t.Run("Keys", testFunction)
+}
