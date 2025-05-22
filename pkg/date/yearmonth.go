@@ -43,7 +43,7 @@ const (
 	startYear  = 2022
 	startMonth = 9
 	endYear    = 2025
-	endMonth   = 12
+	endMonth   = 8
 )
 
 var namesMonth = []string{
